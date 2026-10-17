@@ -163,7 +163,9 @@ private fun RecordButton(recording: Boolean, level: Float, onClick: () -> Unit) 
             Modifier
                 .size(92.dp)
                 .clip(CircleShape)
-                .background(if (recording) BF.Pink else BF.Brand)
+                .then(
+                    if (recording) Modifier.background(BF.Pink) else Modifier.background(BF.Brand)
+                )
                 .clickable(onClick = onClick),
             contentAlignment = Alignment.Center
         ) {

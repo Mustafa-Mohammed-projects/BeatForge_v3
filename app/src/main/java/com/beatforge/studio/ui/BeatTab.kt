@@ -12,6 +12,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -258,7 +259,7 @@ private fun StepGrid(
             Modifier
                 .fillMaxSize()
                 .pointerInput(Unit) {
-                    androidx.compose.foundation.gestures.detectTapGestures { o ->
+                    detectTapGestures { o ->
                         toggleCallback(cellAt(o.x, size.width.toFloat()))
                     }
                 }
